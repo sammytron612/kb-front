@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Articles extends Model
+class Sections extends Model
 {
     use HasFactory;
 
-    public function sections()
+    public function articles()
     {
-        return $this->hasOne('App\Models\Sections','id','sectionid');
+        return $this->belongsTo('App\Models\Articles','sectionid','id');
     }
 }
