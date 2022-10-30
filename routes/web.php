@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/search', function () {
+    return view('search');
+})->name('search');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/show/{article}', 'App\Http\Controllers\ArticleController@show')->name('article.show');
+
+
 
 require __DIR__.'/auth.php';
