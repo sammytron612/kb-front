@@ -8,10 +8,11 @@ use App\Models\Articles;
 
 class ArticleController extends Controller
 {
-    public function show(Articles $article)
+    public function show(Request $request)
     {
 
-        $body = ArticleBody::findOrFail($article->id);
+        $article = Articles::find($request->id);
+        $body = ArticleBody::findOrFail($request->id);
 
         return view('show-article', compact('article', 'body'));
     }

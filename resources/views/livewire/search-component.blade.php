@@ -24,7 +24,7 @@
                 <div class="w-full mt-5">
                 @foreach($articles as $article)
                     <div class="py-3">
-                        <a href="{{route('article.show', $article->id)}}" class="text-2xl text-left hover:font-semibold hover:text-blue-800 text-blue-600">{{$article->title}}</a>
+                        <a href="{{url('show?token=kevinlesliewilson1969&'.'id='.$article->id)}}" class="text-2xl text-left hover:font-semibold hover:text-blue-800 text-blue-600">{{$article->title}}</a>
                         <div class="text-sm">Authored by : <b>{{$article->author_name}}</b> Views : <b>{{$article->views}}</b> Created : <b>{{\Carbon\Carbon::parse($article->created_at)->diffForHumans()}}</b></div>
                     </div>
                 @endforeach

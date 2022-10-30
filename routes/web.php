@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/search', function () {
     return view('search');
-})->name('search');
+})->name('search')->middleware('token');
 
-Route::get('/show/{article}', 'App\Http\Controllers\ArticleController@show')->name('article.show');
+Route::get('/show', 'App\Http\Controllers\ArticleController@show')->name('article.show')->middleware('token');
 
 
 
